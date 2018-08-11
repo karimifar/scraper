@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 body{
     background: #eee;
 }
@@ -8,4 +11,58 @@ body{
 
 .visible{
     display: inline-block;
+}
+
+.title-text{
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1em;
+}
+.article-card{
+    width: 40%;
+    float: left;
+    margin: 2.5%;
+    padding: 20px;
+    border-top: #777 1px solid;
+    min-height: 300px;
+}
+
+.article-card:hover{
+    background: white;
+}
+
+.main-title h1{
+    font-family: 'Playfair Display', serif;
+    font-size: 70px;
+    font-weight: 900;
+    line-height: 1em;
+}
+.main-title{
+    margin: 0px 0 120px;
+}
+.container{
+    margin-top: 20px;
+    padding: 10px;
+}
+.home-p h1{
+    font-size: 100px;
+    margin-top:20px;
+}
+.nav{
+    margin: 20px 0;
+}
+
+
+.far , .fas{
+    padding: 4px;
+    font-size: 40px;
+    color: #6F96A5;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out
+}
+
+.far:hover, .fas:hover{
+    transform: scale(1.1);
+    transform-origin: 50% 50%;
 }

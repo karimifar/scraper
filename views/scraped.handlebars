@@ -1,20 +1,26 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <button class="btn">Home</button>
-            <button class="btn">Saved articles</button>
+    <div class="row nav">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <a href="/"><button class="btn btn-sm">Home</button></a>
+            <button class="btn btn-sm">Saved articles</button>
         </div>
 
-        <div class="col-md-2"></div>
+        <div class="col-md-1"></div>
     </div>
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
-            <ul>
+            <div class="main-title">
+                <h1>
+                    FastCo/<span style="font-weight:100">Design</span><br> Scraper
+                </h1>
+            </div>
+            <div class="wrapper">
                 {{#each articles}}
-                    <div data-id={{this._id}}>
-                        <a href={{this.link}}><p class="title-text">{{this.title}}</p></a>
+                    <div class="article-card" data-id={{this._id}}>
+                        <p class="title-text">{{this.title}}</p>
+                        <a class="link" href={{this.link}}><p>[Read Article]</p></a>
                         <h2>
                             {{#if this.note}}
                                 <i class="note fas fa-sticky-note"></i>
@@ -35,8 +41,8 @@
                                             <label>Jot down something</label>
                                             <textarea class="form-control" id="exampleTextarea" rows="3" disabled>{{this.note.body}}</textarea>
                                         </div>
-                                        <button type="submit" class="btn btn-primary note-edit" data-id={{this._id}}>Edit</button>
-                                        <button type="submit" class="btn btn-primary note-delete" data-id={{this._id}}>Delete note</button>
+                                        <button type="submit" class="btn btn-sm note-edit" data-id={{this._id}}>Edit</button>
+                                        <button type="submit" class="btn btn-sm note-delete" data-id={{this._id}}>Delete note</button>
                                     </div>
                                 </form>
                             {{else}}
@@ -46,7 +52,7 @@
                                             <label>Jot down something</label>
                                             <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
                                         </div>
-                                        <button type="submit" class="btn btn-primary note-submit" data-id={{this._id}}>Submit</button>
+                                        <button type="submit" class="btn btn-sm note-submit" data-id={{this._id}}>Submit</button>
                                     </div>
                                 </form>
                             {{/if}}
@@ -54,7 +60,7 @@
                         
                     </div>
                 {{/each}}
-            </ul>
+            </div>
 
         </div>
         <div class="col-md-1"></div>

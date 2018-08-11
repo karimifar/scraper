@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <button class="btn">Home</button>
+            <button class="btn">Saved articles</button>
+        </div>
+
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <ul>
+                {{#each articles}}
+                    <div data-id={{this._id}}>
+                        <a href={{this.link}}><p class="title-text">{{this.title}}</p></a>
+                        <h2>
+                            {{#if this.note}}
+                                <i class="note fas fa-sticky-note"></i>
+                            {{else}}
+                                <i class="note far fa-sticky-note"></i>
+                            {{/if}}
+                            {{#if saved}}
+                                <i class="heart fas fa-heart"></i>
+                            {{else}}
+                                <i class="heart far fa-heart"></i>
+                            {{/if}}
+                        </h2>
+                        <div class="note-div invisible">
+                            {{#if this.note}}
+                                <form>
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label>Jot down something</label>
+                                            <textarea class="form-control" id="exampleTextarea" rows="3" disabled>{{this.note.body}}</textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary note-edit" data-id={{this._id}}>Edit</button>
+                                        <button type="submit" class="btn btn-primary note-delete" data-id={{this._id}}>Delete note</button>
+                                    </div>
+                                </form>
+                            {{else}}
+                                <form>
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label>Jot down something</label>
+                                            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary note-submit" data-id={{this._id}}>Submit</button>
+                                    </div>
+                                </form>
+                            {{/if}}
+                        </div>
+                        
+                    </div>
+                {{/each}}
+            </ul>
+
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+
+</div>
+<script src="/js/scraped.js"></script>

@@ -1,0 +1,11 @@
+body{
+    background: #eee;
+}
+
+.invisible{
+    display: none;
+}
+
+.visible{
+    display: inline-block;
+}
